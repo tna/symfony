@@ -102,7 +102,7 @@ final class UserSecurityIdentity implements SecurityIdentityInterface
             return false;
         }
 
-        return $this->username === $sid->getUsername()
+        return strtolower($this->username) === strtolower($sid->getUsername())
                && $this->class === $sid->getClass();
     }
 
